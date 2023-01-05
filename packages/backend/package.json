@@ -1,0 +1,8 @@
+{
+  "name": "@cashforce/backend",
+  "version": "1.0.0",
+  "description": "backend do desafio tecnico da Cashforce",
+  "author": "IgorMarinhoArgollo <igormarinhoargollo@gmail.com>",
+  "main": "index.js",
+  "license": "MIT"
+}
