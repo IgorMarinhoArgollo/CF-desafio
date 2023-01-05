@@ -4,5 +4,23 @@
   "description": "backend do desafio tecnico da Cashforce",
   "author": "IgorMarinhoArgollo <igormarinhoargollo@gmail.com>",
   "main": "index.js",
-  "license": "MIT"
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "database": "npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0",
+    "sequelize-cli": "^6.5.2",
+    "swagger-ui-express": "^4.6.0"
+  }
 }
