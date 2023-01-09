@@ -23,7 +23,6 @@ module.exports = {
         type: Sequelize.STRING,
       },
       orderFileName: {
-        allowNull: false,
         defaultValue: null,
         type: Sequelize.STRING,
       },
@@ -36,7 +35,6 @@ module.exports = {
         type: Sequelize.STRING,
       },
       pdfFile: {
-        allowNull: false,
         defaultValue: null,
         type: Sequelize.STRING,
       },
@@ -80,11 +78,11 @@ module.exports = {
         defaultValue: null,
         type: Sequelize.INTEGER,
       },
-      cnorderStatusBuyerpjId: {
+      orderStatusBuyer: {
         defaultValue: 0,
         type: Sequelize.STRING,
       },
-      cnpjorderStatusProviderId: {
+      orderStatusProvider: {
         defaultValue: 0,
         type: Sequelize.STRING,
       },
