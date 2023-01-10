@@ -12,6 +12,7 @@ module.exports = {
       },
       cnpj: {
         allowNull: false,
+        unique: true,
         type: Sequelize.STRING,
       },
       companyType: {
@@ -26,6 +27,8 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+    }, {
+      initialAutoIncrement: 437,
     });
   },
   async down(queryInterface, Sequelize) {

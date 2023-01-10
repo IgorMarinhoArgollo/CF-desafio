@@ -3,28 +3,40 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('orderportions', {
+    await queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      nDup: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      dVenc: {
+      email: {
         allowNull: false,
+        unique: true,
         type: Sequelize.STRING,
       },
-      vDup: {
-        allowNull: false,
+      phoneNumber: {
+        defaultValue: null,
         type: Sequelize.STRING,
       },
-      availableToMarket: {
-        allowNull: false,
-        defaultValue: 1,
+      mobile: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      departament: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      verificationCode: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      emailChecked: {
+        defaultValue: 0,
         type: Sequelize.INTEGER,
       },
       createdAt: {
@@ -35,13 +47,15 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      orderId: {
-        defaultValue: null,
+      cashforceAdm: {
+        defaultValue: 0,
         type: Sequelize.INTEGER,
       },
+    }, {
+      initialAutoIncrement: 122,
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('orderportions');
+    await queryInterface.dropTable('users');
   },
 };

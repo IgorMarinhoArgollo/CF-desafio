@@ -55,11 +55,25 @@ module.exports = {
       orderId: {
         defaultValue: null,
         type: Sequelize.INTEGER,
+        onUpdate: 'SET NULL',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'orders',
+          key: 'id',
+        },
       },
       sponsorId: {
         defaultValue: null,
         type: Sequelize.INTEGER,
+        onUpdate: 'SET NULL',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'sponsors',
+          key: 'id',
+        },
       },
+    }, {
+      initialAutoIncrement: 40,
     });
   },
   async down(queryInterface, Sequelize) {

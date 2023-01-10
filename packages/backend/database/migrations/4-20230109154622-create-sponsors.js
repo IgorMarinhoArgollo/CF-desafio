@@ -3,54 +3,98 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('orders', {
+    await queryInterface.createTable('sponsors', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      orderNfId: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      orderNumber: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      orderPath: {
+      tradingName: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      orderFileName: {
+      cashforceTax: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      orderOriginalName: {
+      responsibleName: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      emissionDate: {
+      responsibleEmail: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      pdfFile: {
+      responsiblePosition: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      emitedTo: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      nNf: {
+      responsiblePhone: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      CTE: {
+      responsibleMobile: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      value: {
+      website: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      postalCode: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      address: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      number: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      complement: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      neighborhood: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      city: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      state: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      bank: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      bankAgency: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      account: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      phoneNumber: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      situation: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      situationDate: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
@@ -65,42 +109,22 @@ module.exports = {
       cnpjId: {
         defaultValue: null,
         type: Sequelize.INTEGER,
+        onUpdate: 'SET NULL',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'cnpjs',
+          key: 'id',
+        },
       },
-      userId: {
-        defaultValue: null,
-        type: Sequelize.INTEGER,
-      },
-      buyerId: {
-        defaultValue: null,
-        type: Sequelize.INTEGER,
-      },
-      providerId: {
-        defaultValue: null,
-        type: Sequelize.INTEGER,
-      },
-      orderStatusBuyer: {
-        defaultValue: 0,
-        type: Sequelize.STRING,
-      },
-      orderStatusProvider: {
-        defaultValue: 0,
-        type: Sequelize.STRING,
-      },
-      deliveryReceipt: {
+      email: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
-      cargoPackingList: {
-        defaultValue: null,
-        type: Sequelize.STRING,
-      },
-      deliveryCtrc: {
-        defaultValue: null,
-        type: Sequelize.STRING,
-      },
+    }, {
+      initialAutoIncrement: 17,
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('orders');
+    await queryInterface.dropTable('sponsors');
   },
 };

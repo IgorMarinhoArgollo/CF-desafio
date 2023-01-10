@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('buyers', {
+    await queryInterface.createTable('providers', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -74,6 +74,22 @@ module.exports = {
         defaultValue: null,
         type: Sequelize.STRING,
       },
+      bank: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      bankAgency: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      account: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
+      documents: {
+        defaultValue: null,
+        type: Sequelize.STRING,
+      },
       phoneNumber: {
         defaultValue: null,
         type: Sequelize.STRING,
@@ -97,19 +113,22 @@ module.exports = {
       cnpjId: {
         defaultValue: null,
         type: Sequelize.INTEGER,
-      },
-      confirm: {
-        allowNull: false,
-        defaultValue: 1,
-        type: Sequelize.INTEGER,
+        onUpdate: 'SET NULL',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'cnpjs',
+          key: 'id',
+        },
       },
       email: {
         defaultValue: null,
         type: Sequelize.STRING,
       },
+    }, {
+      initialAutoIncrement: 235,
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('buyers');
+    await queryInterface.dropTable('providers');
   },
 };
