@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 const orderportionsModel = (sequelize, DataTypes) => {
   const Orderportion = sequelize.define('OrderPortion', {
     id: DataTypes.INTEGER,
@@ -16,6 +17,14 @@ const orderportionsModel = (sequelize, DataTypes) => {
   }, {
     tableName: 'orderportions',
   });
+
+  Orderportion.associate = (models) => {
+    Orderportion.hasOne(models.Sponsor, { as: 'sponsor', foreignKey: 'sponsorId' });
+  };
+
+  Orderportion.associate = (models) => {
+    Orderportion.hasOne(models.Order, { as: 'order', foreignKey: 'orderId' });
+  };
 
   return Orderportion;
 };
