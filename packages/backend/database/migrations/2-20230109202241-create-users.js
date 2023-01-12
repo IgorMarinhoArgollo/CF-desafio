@@ -37,7 +37,7 @@ module.exports = {
       },
       emailChecked: {
         defaultValue: 0,
-        type: Sequelize.INTEGER,
+        type: Sequelize.TINYINT,
       },
       createdAt: {
         allowNull: false,
@@ -49,7 +49,7 @@ module.exports = {
       },
       cashforceAdm: {
         defaultValue: 0,
-        type: Sequelize.INTEGER,
+        type: Sequelize.TINYINT,
       },
     }, {
       initialAutoIncrement: 122,

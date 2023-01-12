@@ -107,7 +107,7 @@ module.exports = {
       confirm: {
         allowNull: false,
         defaultValue: 1,
-        type: Sequelize.INTEGER,
+        type: Sequelize.TINYINT,
       },
       email: {
         defaultValue: null,
