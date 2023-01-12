@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "",
-    "description": "",
+    "title": "Desafio Técnico Cashforce",
+    "description": "API do desafio técnico da Cashforce",
     "version": "1.0.0",
     "contact": {
       "email": "igormarinhoargollo@gmail.com"
@@ -10,6 +10,667 @@
   },
   "server": {
     "url": "http://localhost:3000",
-    "description": "API"
+    "description": "Cashforce API"
+  },
+  "paths": {
+    "/orders": {
+      "get": {
+        "summary": "Get all orders",
+        "description": "This route is responsible for getting all orders on database",
+        "tags": [
+          "orders"
+        ],
+        "responses": {
+          "200": {
+            "description": "All Orders",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/order"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 1,
+                    "orderNfId": "1605181324132",
+                    "orderNumber": "18153",
+                    "orderPath": null,
+                    "orderFileName": null,
+                    "orderOriginalName": null,
+                    "emissionDate": "2020-10-30T11:00:00-03:00",
+                    "pdfFile": null,
+                    "emitedTo": "22843980000127",
+                    "nNf": "18153",
+                    "CTE": "",
+                    "value": "198450",
+                    "createdAt": "2020-10-30T17:54:18.000Z",
+                    "updatedAt": "2020-10-30T17:54:18.000Z",
+                    "cnpjId": 1,
+                    "userId": 1,
+                    "buyerId": 1,
+                    "providerId": 1,
+                    "orderStatusBuyer": "0",
+                    "orderStatusProvider": "0",
+                    "deliveryReceipt": null,
+                    "cargoPackingList": null,
+                    "deliveryCtrc": null,
+                    "cnpj": {
+                      "id": 1,
+                      "cnpj": "00000000000001",
+                      "companyType": "2",
+                      "createdAt": "2020-10-29T21:20:33.000Z",
+                      "updatedAt": "2020-10-29T21:20:33.000Z"
+                    },
+                    "user": {
+                      "id": 1,
+                      "name": "ALLAN SOUZA",
+                      "email": "allan@cashforce.com.br",
+                      "phoneNumber": null,
+                      "mobile": null,
+                      "departament": null,
+                      "verificationCode": "",
+                      "emailChecked": 1,
+                      "createdAt": "2020-10-01T21:31:37.000Z",
+                      "updatedAt": "2020-10-01T22:41:23.000Z",
+                      "cashforceAdm": 1
+                    },
+                    "buyer": {
+                      "id": 1,
+                      "name": "SACADO 001",
+                      "tradingName": "SACADO 001 LTDA",
+                      "cashforceTax": "0",
+                      "responsibleName": null,
+                      "responsibleEmail": null,
+                      "responsiblePosition": null,
+                      "responsiblePhone": null,
+                      "responsibleMobile": null,
+                      "website": null,
+                      "postalCode": null,
+                      "address": null,
+                      "number": null,
+                      "complement": null,
+                      "neighborhood": null,
+                      "city": null,
+                      "state": null,
+                      "phoneNumber": null,
+                      "situation": null,
+                      "situationDate": null,
+                      "createdAt": "2020-10-29T21:20:33.000Z",
+                      "updatedAt": "2020-10-29T21:20:34.000Z",
+                      "cnpjId": 1,
+                      "confirm": 1,
+                      "email": null
+                    },
+                    "provider": {
+                      "id": 1,
+                      "name": "provider1",
+                      "tradingName": null,
+                      "cashforceTax": null,
+                      "responsibleName": null,
+                      "responsibleEmail": null,
+                      "responsiblePosition": null,
+                      "responsiblePhone": null,
+                      "responsibleMobile": null,
+                      "website": null,
+                      "postalCode": null,
+                      "address": null,
+                      "number": null,
+                      "complement": null,
+                      "neighborhood": null,
+                      "city": null,
+                      "state": null,
+                      "bank": null,
+                      "bankAgency": null,
+                      "account": null,
+                      "documents": null,
+                      "phoneNumber": null,
+                      "situation": null,
+                      "situationDate": null,
+                      "createdAt": "2023-01-12T15:31:05.000Z",
+                      "updatedAt": "2023-01-12T15:31:05.000Z",
+                      "cnpjId": null,
+                      "email": null
+                    },
+                    "orderPortion": [],
+                    "offer": []
+                  },
+                  {
+                    "id": 2,
+                    "orderNfId": "160518132413",
+                    "orderNumber": "18157",
+                    "orderPath": null,
+                    "orderFileName": null,
+                    "orderOriginalName": null,
+                    "emissionDate": "2020-11-04T15:32:35-02:00",
+                    "pdfFile": null,
+                    "emitedTo": "35705180000272",
+                    "nNf": "18157",
+                    "CTE": "",
+                    "value": "168850",
+                    "createdAt": "2020-11-10T18:33:46.000Z",
+                    "updatedAt": "2020-11-10T18:33:46.000Z",
+                    "cnpjId": 1,
+                    "userId": 1,
+                    "buyerId": 1,
+                    "providerId": 1,
+                    "orderStatusBuyer": "0",
+                    "orderStatusProvider": "0",
+                    "deliveryReceipt": null,
+                    "cargoPackingList": null,
+                    "deliveryCtrc": null,
+                    "cnpj": {
+                      "id": 1,
+                      "cnpj": "00000000000001",
+                      "companyType": "2",
+                      "createdAt": "2020-10-29T21:20:33.000Z",
+                      "updatedAt": "2020-10-29T21:20:33.000Z"
+                    },
+                    "user": {
+                      "id": 1,
+                      "name": "ALLAN SOUZA",
+                      "email": "allan@cashforce.com.br",
+                      "phoneNumber": null,
+                      "mobile": null,
+                      "departament": null,
+                      "verificationCode": "",
+                      "emailChecked": 1,
+                      "createdAt": "2020-10-01T21:31:37.000Z",
+                      "updatedAt": "2020-10-01T22:41:23.000Z",
+                      "cashforceAdm": 1
+                    },
+                    "buyer": {
+                      "id": 1,
+                      "name": "SACADO 001",
+                      "tradingName": "SACADO 001 LTDA",
+                      "cashforceTax": "0",
+                      "responsibleName": null,
+                      "responsibleEmail": null,
+                      "responsiblePosition": null,
+                      "responsiblePhone": null,
+                      "responsibleMobile": null,
+                      "website": null,
+                      "postalCode": null,
+                      "address": null,
+                      "number": null,
+                      "complement": null,
+                      "neighborhood": null,
+                      "city": null,
+                      "state": null,
+                      "phoneNumber": null,
+                      "situation": null,
+                      "situationDate": null,
+                      "createdAt": "2020-10-29T21:20:33.000Z",
+                      "updatedAt": "2020-10-29T21:20:34.000Z",
+                      "cnpjId": 1,
+                      "confirm": 1,
+                      "email": null
+                    },
+                    "provider": {
+                      "id": 1,
+                      "name": "provider1",
+                      "tradingName": null,
+                      "cashforceTax": null,
+                      "responsibleName": null,
+                      "responsibleEmail": null,
+                      "responsiblePosition": null,
+                      "responsiblePhone": null,
+                      "responsibleMobile": null,
+                      "website": null,
+                      "postalCode": null,
+                      "address": null,
+                      "number": null,
+                      "complement": null,
+                      "neighborhood": null,
+                      "city": null,
+                      "state": null,
+                      "bank": null,
+                      "bankAgency": null,
+                      "account": null,
+                      "documents": null,
+                      "phoneNumber": null,
+                      "situation": null,
+                      "situationDate": null,
+                      "createdAt": "2023-01-12T15:31:05.000Z",
+                      "updatedAt": "2023-01-12T15:31:05.000Z",
+                      "cnpjId": null,
+                      "email": null
+                    },
+                    "orderPortion": [],
+                    "offer": []
+                  },
+                  {
+                    "id": 3,
+                    "orderNfId": "1605181324130",
+                    "orderNumber": "18184",
+                    "orderPath": null,
+                    "orderFileName": null,
+                    "orderOriginalName": null,
+                    "emissionDate": "2020-11-10",
+                    "pdfFile": null,
+                    "emitedTo": "00418477002640",
+                    "nNf": "18184",
+                    "CTE": "",
+                    "value": "222795",
+                    "createdAt": "2020-11-12T11:42:06.000Z",
+                    "updatedAt": "2020-11-18T12:22:14.000Z",
+                    "cnpjId": 1,
+                    "userId": 1,
+                    "buyerId": 1,
+                    "providerId": 1,
+                    "orderStatusBuyer": "7",
+                    "orderStatusProvider": "3",
+                    "deliveryReceipt": null,
+                    "cargoPackingList": null,
+                    "deliveryCtrc": null,
+                    "cnpj": {
+                      "id": 1,
+                      "cnpj": "00000000000001",
+                      "companyType": "2",
+                      "createdAt": "2020-10-29T21:20:33.000Z",
+                      "updatedAt": "2020-10-29T21:20:33.000Z"
+                    },
+                    "user": {
+                      "id": 1,
+                      "name": "ALLAN SOUZA",
+                      "email": "allan@cashforce.com.br",
+                      "phoneNumber": null,
+                      "mobile": null,
+                      "departament": null,
+                      "verificationCode": "",
+                      "emailChecked": 1,
+                      "createdAt": "2020-10-01T21:31:37.000Z",
+                      "updatedAt": "2020-10-01T22:41:23.000Z",
+                      "cashforceAdm": 1
+                    },
+                    "buyer": {
+                      "id": 1,
+                      "name": "SACADO 001",
+                      "tradingName": "SACADO 001 LTDA",
+                      "cashforceTax": "0",
+                      "responsibleName": null,
+                      "responsibleEmail": null,
+                      "responsiblePosition": null,
+                      "responsiblePhone": null,
+                      "responsibleMobile": null,
+                      "website": null,
+                      "postalCode": null,
+                      "address": null,
+                      "number": null,
+                      "complement": null,
+                      "neighborhood": null,
+                      "city": null,
+                      "state": null,
+                      "phoneNumber": null,
+                      "situation": null,
+                      "situationDate": null,
+                      "createdAt": "2020-10-29T21:20:33.000Z",
+                      "updatedAt": "2020-10-29T21:20:34.000Z",
+                      "cnpjId": 1,
+                      "confirm": 1,
+                      "email": null
+                    },
+                    "provider": {
+                      "id": 1,
+                      "name": "provider1",
+                      "tradingName": null,
+                      "cashforceTax": null,
+                      "responsibleName": null,
+                      "responsibleEmail": null,
+                      "responsiblePosition": null,
+                      "responsiblePhone": null,
+                      "responsibleMobile": null,
+                      "website": null,
+                      "postalCode": null,
+                      "address": null,
+                      "number": null,
+                      "complement": null,
+                      "neighborhood": null,
+                      "city": null,
+                      "state": null,
+                      "bank": null,
+                      "bankAgency": null,
+                      "account": null,
+                      "documents": null,
+                      "phoneNumber": null,
+                      "situation": null,
+                      "situationDate": null,
+                      "createdAt": "2023-01-12T15:31:05.000Z",
+                      "updatedAt": "2023-01-12T15:31:05.000Z",
+                      "cnpjId": null,
+                      "email": null
+                    },
+                    "orderPortion": [],
+                    "offer": []
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "order": {
+        "type": "object",
+        "properties": {
+          "id": {
+
+            "type": "number"
+          },
+          "orderNfId": {
+            "type": "string"
+          },
+          "orderNumber": {
+            "type": "string"
+          },
+          "orderPath": {
+            "type": "string"
+          },
+          "orderFileName": {
+            "type": "string"
+          },
+          "orderOriginalName": {
+            "type": "string"
+          },
+          "emissionDate": {
+            "type": "string"
+          },
+          "pdfFile": {
+            "type": "string"
+          },
+          "emitedTo": {
+            "type": "string"
+          },
+          "nNf": {
+            "type": "string"
+          },
+          "CTE": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "cnpjId": {
+            "type": "number"
+          },
+          "userId": {
+            "type": "number"
+          },
+          "buyerId": {
+            "type": "number"
+          },
+          "providerId": {
+            "type": "number"
+          },
+          "orderStatusBuyer": {
+            "type": "string"
+          },
+          "orderStatusProvider": {
+            "type": "string"
+          },
+          "deliveryReceipt": {
+            "type": "string"
+          },
+          "cargoPackingList": {
+            "type": "string"
+          },
+          "deliveryCtrc": {
+            "type": "string"
+          },
+          "cnpj": {
+            "$ref": "#/components/schemas/cnpj"
+          },
+          "user": {
+            "$ref": "#/components/schemas/user"
+          },
+          "buyer": {
+            "$ref": "#/components/schemas/buyer"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/provider"
+          },
+          "orderPortion": {
+            "type": "Array"
+          },
+          "offer": {
+            "type": "Array"
+          }          
+        }
+      },
+      "cnpj": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "cnpj": {
+            "type": "string"
+          },
+          "companyType": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "string"
+          },
+          "departament": {
+            "type": "string"
+          },
+          "verificationCode": {
+            "type": "string"
+          },
+          "emailChecked": {
+            "type": "number"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "cashforceAdm": {
+            "type": "number"
+          }
+        }
+      },
+      "buyer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tradingName": {
+            "type": "string"
+          },
+          "cashforceTax": {
+            "type": "string"
+          },
+          "responsibleName": {
+            "type": "string"
+          },
+          "responsiblePosition": {
+            "type": "string"
+          },
+          "responsiblePhone": {
+            "type": "string"
+          },
+          "responsibleMobile": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string"
+          },
+          "complement": {
+            "type": "string"
+          },
+          "neighborhood": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "situation": {
+            "type": "string"
+          },
+          "situationDate": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "cnpjId": {
+            "type": "number"
+          },
+          "confirm": {
+            "type": "number"
+          },
+         "email": {
+          "type": "string"
+        }
+        }
+      },
+      "provider": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tradingName": {
+            "type": "string"
+          },
+          "cashforceTax": {
+            "type": "number"
+          },
+          "responsibleName": {
+            "type": "string"
+          },
+          "responsibleEmail": {
+            "type": "string"
+          },
+          "responsiblePosition": {
+            "type": "string"
+          },
+          "responsiblePhone": {
+            "type": "string"
+          },
+          "responsibleMobile": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string"
+          },
+          "complement": {
+            "type": "string"
+          },
+          "neighborhood": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "bank": {
+            "type": "string"
+          },
+          "bankAgency": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          },
+          "documents": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "situation": {
+            "type": "string"
+          },
+          "situationDate": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "cnpjId": {
+            "type": "number"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
   }
 }
