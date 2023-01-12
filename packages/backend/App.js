@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const swaggerUi = require('swagger-ui-express');
 const limiter = require('./limiter');
 require('dotenv').config();
+const errorMiddleware = require('./middlewares/error');
 
 const swaggerDocs = require('./swagger.json');
 
@@ -16,6 +17,6 @@ app.use(express.json());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-// app.use(errorMiddleware);
+app.use(errorMiddleware);
 
 module.exports = app;
