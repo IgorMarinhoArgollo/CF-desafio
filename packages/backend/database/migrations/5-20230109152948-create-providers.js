@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable max-lines-per-function */
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -128,7 +127,7 @@ module.exports = {
       initialAutoIncrement: 235,
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface, _Sequelize) {
     await queryInterface.dropTable('providers');
   },
 };
