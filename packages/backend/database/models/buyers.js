@@ -111,10 +111,6 @@ const BuyersModel = (sequelize, DataTypes) => {
   Buyer.associate = (models) => {
     Buyer.belongsTo(models.Cnpj, { as: 'cnpj', foreignKey: 'cnpjId' });
   };
-
-  Buyer.associate = (models) => {
-    Buyer.hasOne(models.Order, { as: 'order', foreignKey: 'buyerId' });
-  };
   
   return Buyer;
 };

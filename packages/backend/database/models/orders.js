@@ -120,10 +120,6 @@ const ordersModel = (sequelize, DataTypes) => {
   };
 
   Order.associate = (models) => {
-    Order.hasOne(models.Offer, { as: 'offer', foreignKey: 'orderId' });
-  };
-
-  Order.associate = (models) => {
     Order.hasOne(models.OrderPortion, { as: 'orderportions', foreignKey: 'orderId' });
   };
 
