@@ -116,11 +116,8 @@ const sponsorsModel = (sequelize, DataTypes) => {
   });
 
   Sponsor.associate = (models) => {
-    Sponsor.belongsTo(models.Cnpj, { as: 'cnpj', foreignKey: 'cnpjId' });
-  };
-
-  Sponsor.associate = (models) => {
-    Sponsor.hasOne(models.Offer, { as: 'offer', foreignKey: 'sponsorId' });
+    Sponsor.belongsTo(models.Cnpj, { foreignKey: 'cnpjId' });
+    Sponsor.hasMany(models.Offer, { foreignKey: 'sponsorId' });
   };
 
   return Sponsor;

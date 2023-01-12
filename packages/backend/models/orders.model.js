@@ -1,7 +1,9 @@
 const { Order } = require('../database/models');
 
 const getAllOrders = async () => {
-  const result = await Order.findAll();
+  const result = await Order.findAll({
+    include: [{ all: true }],
+  });
   return result;
 };
 

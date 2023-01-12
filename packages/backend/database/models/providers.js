@@ -120,11 +120,8 @@ const prodidersModel = (sequelize, DataTypes) => {
   });
 
   Provider.associate = (models) => {
-    Provider.belongsTo(models.Cnpj, { as: 'cnpj', foreignKey: 'cnpjId' });
-  };
-
-  Provider.associate = (models) => {
-    Provider.hasOne(models.Order, { as: 'order', foreignKey: 'providerId' });
+    Provider.belongsTo(models.Cnpj, { foreignKey: 'cnpjId' });
+    Provider.hasMany(models.Order, { foreignKey: 'providerId' });
   };
 
   return Provider;

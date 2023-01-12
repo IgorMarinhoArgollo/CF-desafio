@@ -40,7 +40,7 @@ const orderportionsModel = (sequelize, DataTypes) => {
   });
 
   Orderportion.associate = (models) => {
-    Orderportion.belongsTo(models.Order, { as: 'order', foreignKey: 'orderId' });
+    Orderportion.belongsTo(models.Order, { foreignKey: 'orderId' });
   };
 
   return Orderportion;

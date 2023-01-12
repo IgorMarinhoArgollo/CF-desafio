@@ -53,7 +53,7 @@ const usersModel = (sequelize, DataTypes) => {
   });
 
   User.associate = (models) => {
-    User.hasOne(models.Order, { as: 'order', foreignKey: 'userId' });
+    User.hasOne(models.Order, { foreignKey: 'userId' });
   };
 
   return User;

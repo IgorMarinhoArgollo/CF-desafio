@@ -104,23 +104,12 @@ const ordersModel = (sequelize, DataTypes) => {
   });
 
   Order.associate = (models) => {
-    Order.belongsTo(models.Cnpj, { as: 'cnpj', foreignKey: 'cnpjId' });
-  };
-
-  Order.associate = (models) => {
-    Order.belongsTo(models.User, { as: 'user', foreignKey: 'userId' });
-  };
-
-  Order.associate = (models) => {
-    Order.belongsTo(models.Buyer, { as: 'buyer', foreignKey: 'buyerId' });
-  };
-
-  Order.associate = (models) => {
-    Order.belongsTo(models.Provider, { as: 'provider', foreignKey: 'providerId' });
-  };
-
-  Order.associate = (models) => {
-    Order.hasOne(models.OrderPortion, { as: 'orderportions', foreignKey: 'orderId' });
+    Order.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+    Order.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+    Order.belongsTo(models.Buyer, { foreignKey: 'buyerId', as: 'buyer' });
+    Order.belongsTo(models.Provider, { foreignKey: 'providerId', as: 'provider' });
+    Order.hasMany(models.OrderPortion, { foreignKey: 'orderId', as: 'orderPortion' });
+    Order.hasMany(models.Offer, { foreignKey: 'orderId', as: 'offer' });
   };
 
   return Order;
