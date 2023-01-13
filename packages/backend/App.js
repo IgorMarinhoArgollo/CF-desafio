@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const rescue = require('express-rescue');
 const swaggerUi = require('swagger-ui-express');
 const morgan = require('morgan');
+const cors = require('cors');
 const limiter = require('./limiter');
 require('dotenv').config();
 const errorMiddleware = require('./middlewares/error');
@@ -13,8 +14,9 @@ const swaggerDocs = require('./swagger.json');
 const app = express();
 app.use(helmet());
 app.use(limiter);
+app.use(cors());
 app.use(express.json());
-app.use(morgan('common'));
+app.use(morgan('tiny'));
 
 app.use('/orders', rescue(orders));
 
