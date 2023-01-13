@@ -28,20 +28,14 @@
       </thead>
       <tbody>
         <OrderItem
-          nota="123"
-          sacado="sacado1"
-          cedente="cedente1"
-          emissao="emissão"
-          valor="123,23"
-          status="0"
-        />
-        <OrderItem
-          nota="123"
-          sacado="sacado1"
-          cedente="cedente1"
-          emissao="emissão"
-          valor="123,23"
-          status="1"
+          v-for="element in InformationApi"
+          :key="element.orderNfId"
+          :nota="element.orderNfId"
+          :sacado="element.buyer.name"
+          :cedente="element.provider.name"
+          :emissao="element.emissionDate"
+          :valor="element.value"
+          :status="element.orderStatusBuyer"
         />
       </tbody>
     </table>
@@ -60,7 +54,7 @@ export default {
 
    data() {
      return {
-       info: [],
+       InformationApi: [],
      };
   },
    
@@ -74,7 +68,7 @@ export default {
          .get("http://localhost:3000/orders")
          .then((res) => {
            this.InformationApi = res.data;
-         }).then(() => console.log(this.InformationApi))
+         })
          .catch((error) => {
            console.log(error);
          });

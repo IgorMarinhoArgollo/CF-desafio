@@ -3,11 +3,13 @@
     <td>{{ nota }}</td>
     <td>{{ sacado }}</td>
     <td>{{ cedente }}</td>
-    <td>{{ emissao }}</td>
+    <td>{{ dateTime(emissao) }}</td>
     <td class="currency">
-      {{ valor }}
+      {{ parseFloat(valor).toFixed(2) }}
     </td>
-    <td>{{ statusValue[status].text }}</td>
+    <td class="status">
+      {{ statusValue[status].text }}
+    </td>
     <td>
       <router-link
         v-slot="{ navigate }"
@@ -26,6 +28,8 @@
 </template>
 
 <script>
+import moment from 'moment';
+
 export default {
   props: {
     nota: {
@@ -57,34 +61,58 @@ export default {
   data() {
     return {
       statusValue: [
-        {value: 0,        
-        text: 'Pendente de confirmação'},
-        {value: 1,                
-        text: 'Pedido confirmado'},
-        {value: 2,        
-        text: 'Não reconhece o pedido'},
-        {value: 3,        
-        text: 'Mercadoria não recebida'},
-        {value: 4,        
-        text: 'Recebida com avaria'},
-        {value: 5,        
-        text: 'Devolvida'},
-        {value: 6,        
-        text: 'Recebida com devolução parcial'},
-        {value: 7,        
-        text: 'Recebida e confirmada'},
-        {value: 8,
-        text: 'Pagamento Autorizado'}
+        {
+          value: 0,
+          text: 'Pendente de confirmação'
+        },
+        {
+          value: 1,
+          text: 'Pedido confirmado'
+        },
+        {
+          value: 2,
+          text: 'Não reconhece o pedido'
+        },
+        {
+          value: 3,
+          text: 'Mercadoria não recebida'
+        },
+        {
+          value: 4,
+          text: 'Recebida com avaria'
+        },
+        {
+          value: 5,
+          text: 'Devolvida'
+        },
+        {
+          value: 6,
+          text: 'Recebida com devolução parcial'
+        },
+        {
+          value: 7,
+          text: 'Recebida e confirmada'
+        },
+        {
+          value: 8,
+          text: 'Pagamento Autorizado'
+        }
       ],
     }
-  }
+  },
+
+  methods: {
+    dateTime(value) {
+      return moment(value).format('DD-MM-YYYY');
+    }
+  },
 }
 </script>
 
 <style>
  td {
   text-align: center;
-  padding: 15px 0;
+  padding: 15px 10px;
  }
 
  button {
@@ -99,9 +127,18 @@ export default {
   border-color: #DFE2EB;
   border-style: solid;
  }
-
+ .currency {
+    color: #00AD8C;
+    font-weight: 600;
+ }
  .currency::before {
-  content: 'R$: '
+  content: 'R$: ';
+  color: #00AD8C
+ }
+
+ .status{
+    color: #00AD8C;
+    font-weight: 600;
  }
 
  @media screen and (max-width: 450px){
