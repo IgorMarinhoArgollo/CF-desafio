@@ -4,8 +4,10 @@
     <td>{{ sacado }}</td>
     <td>{{ cedente }}</td>
     <td>{{ emissao }}</td>
-    <td>{{ valor }}</td>
-    <td>{{ status }}</td>
+    <td class="currency">
+      {{ valor }}
+    </td>
+    <td>{{ statusValue[status].text }}</td>
     <td>
       <router-link
         v-slot="{ navigate }"
@@ -25,25 +27,56 @@
 
 <script>
 export default {
- props: {
+  props: {
     nota: {
       type: String,
-      default: '1234'},
+      default: '1234'
+    },
     sacado: {
       type: String,
-      default: 'SACADO 001'},
+      default: 'SACADO 001'
+    },
     cedente: {
       type: String,
-      default: 'CEDENTE 002'},
+      default: 'CEDENTE 002'
+    },
     emissao: {
       type: String,
-      default: '12/02/2020'},
+      default: '12/02/2020'
+    },
     valor: {
       type: String,
-      default: '49725,00'},
+      default: '49725,00'
+    },
     status: {
       type: Number,
-      default: 1}
+      default: 1
+    }
+  },
+
+  data() {
+    return {
+      statusValue: [
+        {value: 0,        
+        text: 'Pendente de confirmação'},
+        {value: 1,                
+        text: 'Pedido confirmado'},
+        {value: 2,        
+        text: 'Não reconhece o pedido'},
+        {value: 3,        
+        text: 'Mercadoria não recebida'},
+        {value: 4,        
+        text: 'Recebida com avaria'},
+        {value: 5,        
+        text: 'Devolvida'},
+        {value: 6,        
+        text: 'Recebida com devolução parcial'},
+        {value: 7,        
+        text: 'Recebida e confirmada'},
+        {value: 8,
+        text: 'Pagamento Autorizado'}
+      ],
+    }
   }
 }
 </script>
@@ -65,6 +98,10 @@ export default {
   color: #727D94;
   border-color: #DFE2EB;
   border-style: solid;
+ }
+
+ .currency::before {
+  content: 'R$: '
  }
 
  @media screen and (max-width: 450px){

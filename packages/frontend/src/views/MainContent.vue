@@ -6,7 +6,9 @@
           src="../assets/Vector-darkblue.svg"
           alt="hands logo"
         >
-        <h2 class="title">Notas Fiscais</h2>
+        <h2 class="title">
+          Notas Fiscais
+        </h2>
       </div>
       <p class="subtitle">
         Visualize as notas fiscais que você tem.
@@ -25,8 +27,22 @@
         </tr>
       </thead>
       <tbody>
-        <OrderItem nota="123" sacado="sacado1" cedente="cedente1" emissao="emissão" valor="123,23" status="1" />
-        <OrderItem nota="123" sacado="sacado1" cedente="cedente1" emissao="emissão" valor="123,23" status="1" />
+        <OrderItem
+          nota="123"
+          sacado="sacado1"
+          cedente="cedente1"
+          emissao="emissão"
+          valor="123,23"
+          status="0"
+        />
+        <OrderItem
+          nota="123"
+          sacado="sacado1"
+          cedente="cedente1"
+          emissao="emissão"
+          valor="123,23"
+          status="1"
+        />
       </tbody>
     </table>
   </div>
