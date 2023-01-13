@@ -9,7 +9,7 @@
    
   Esse projeto trata de do desafio técnico da empresa Cashforce, onde se foi colicitado a criação de uma aplicação web completa (banco de dados, backend e frontend) utilizando node, vue e sequelize de maneira que o backend forneça o endpoint para o que o frontend apresente os dados em tela.<br><br>
   
-     ![ScreenShot](./assets/cfDesafio.png)<br><br>
+  ![ScreenShot](./assets/cfDesafio.png)<br><br>
 
   
   ## Live
