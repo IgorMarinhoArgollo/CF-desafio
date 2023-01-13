@@ -2,6 +2,7 @@
   <main>
     <SideMenu />
     <div class="body-part">
+      <TopMenu />
       <router-view />
     </div>
   </main>
@@ -9,10 +10,11 @@
 
 <script>
 import SideMenu from './components/SideMenu.vue'
-
+import TopMenu from './components/TopMenu.vue'
 export default {
   components: {
-    SideMenu
+    SideMenu,
+    TopMenu
   }
 }
 
@@ -31,5 +33,6 @@ main {
 .body-part {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 </style>
