@@ -30,6 +30,7 @@
 @media screen and (max-width: 450px){
   .top-menu {
     height: 30px;
+    width: 800px;
   }
   .client-name {
     font-size: 10px;

@@ -109,7 +109,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
  td {
   text-align: center;
   padding: 15px 10px;

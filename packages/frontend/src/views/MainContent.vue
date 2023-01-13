@@ -77,12 +77,16 @@ export default {
   };
 </script>
 
-<style scoped>
+<style>
 .main-header{
   color: #021B51;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 20px 40px;
 }
+table {
+  border-collapse: collapse;
+}
+
 .header-title{
   display: flex;
   font-size: 1.6em;
