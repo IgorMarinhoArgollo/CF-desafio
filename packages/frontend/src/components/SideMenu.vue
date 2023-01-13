@@ -24,7 +24,9 @@
             alt="notas logo"
             class="li-image"
           >
-          Notas Fiscais
+          <p class="li-text">
+            Notas Fiscais
+          </p>
         </a>
       </li>
     </ul>
@@ -56,27 +58,46 @@
 }
 
 .list-item-link {
+  display: flex;
   text-decoration: none;
   color: #00AD8C;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.2em;
+  text-align: center;
 }
 
 .li-image {
   margin-right: 10px;
 }
+.menu-item {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 
 @media screen and (max-width: 450px){
   .menu {
-    width: 150px;
+    width: 100px;
   }
 
   .logo {
-    width: 75px;
+    width: 80px;
     margin-top: 0;
+    padding: 0 10px;
   }
   .div-logo {
     height: 60px;
   }
+
+  .list-item-link {
+  font-size: 0.8em;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.li-img{
+  width: 25px;
+}
+
 }
 </style>
