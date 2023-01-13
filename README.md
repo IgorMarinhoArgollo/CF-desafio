@@ -9,6 +9,8 @@
    
   Esse projeto trata de do desafio técnico da empresa Cashforce, onde se foi colicitado a criação de uma aplicação web completa (banco de dados, backend e frontend) utilizando node, vue e sequelize de maneira que o backend forneça o endpoint para o que o frontend apresente os dados em tela.<br><br>
   
+     ![ScreenShot](./assets/cfDesafio.png)<br><br>
+
   
   ## Live
   * Localmente a aplicação está funcionando como deveria, entretanto, tendo em vista a não gratuidade do serviço de banco de dados do Heroku, a implementação do banco não foi realizada. Sendo assim, para testar a aplicação basta realizar os passos indicados na seção como rodar e testar a aplicação.
